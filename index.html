@@ -68,14 +68,13 @@
             background-color: #fff;
         }
         .top-right-image {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 110px; /* Ширина зображення */
-    height: 160px; /* Висота зображення */
-    object-fit: cover; /* Щоб зображення заповнило прямокутник без деформації */
-}
-
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 110px; /* Ширина зображення */
+            height: 160px; /* Висота зображення */
+            object-fit: cover; /* Щоб зображення заповнило прямокутник без деформації */
+        }
     </style>
 </head>
 <body>
@@ -86,7 +85,7 @@
 
         <div class="nav-buttons">
             <button>Лабораторна робота №1</button>
-            <button>Лабораторна робота №2</button>
+            <button onclick="showLab2()">Лабораторна робота №2</button>
             <button>Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
@@ -97,19 +96,104 @@
         </div>
 
         <div class="content">
-            <div class="menu">
-                <button>Опис предметного середовища</button>
-                <button>Тема Мета Місце розташування ЛР №1</button>
-                <button>Структура документа</button>
-                <button>HTML-код таблиць</button>
-                <button>HTML-код списку</button>
-                <button>HTML-код зображення</button>
-                <button>Висновки</button>
-            </div>
-            <div class="output">
-                <p>Місце виведення інформації</p>
-            </div>
+            <div class="menu" id="menu"></div>
+            <div class="output" id="output"></div>
         </div>
     </div>
+
+    <script>
+       function showLab2() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails()">Тема, мета ЛР №2 Місце розташування сайту, звіту</button>
+                <button onclick="showStyles()">Способи підключення стилів</button>
+                <button onclick="showTagSelector()">СЕЛЕКТОРИ</button>
+                <button onclick="showClassSelector()">Селектори класу</button>
+                <button onclick="showIDSelector()">Селектори ідентифікаторів</button>
+                <button onclick="showOtherSelector()">Інші селектори</button>
+                <button onclick="showCSS()">CSS: Шрифти, текст, таблиці, фон, контур</button>
+                <button onclick="showConclusion2()">ВИСНОВКИ до ЛР №2</button>`;
+        }
+
+       function showDetails() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p><strong>Тема:</strong> КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
+                <p><strong>Мета:</strong> придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішніми та внутрішніми відступами, плаваючими елементами, оформленням текстових елементів.</p>
+                <p><strong>Місце розташування:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/dariyannaa/is-32_English_course_Plieshkova">Посилання на репозиторій лабораторної роботи №2</a></li>
+                    <li><a href="https://dariyannaa.github.io/is-32_English_course_Plieshkova/">Посилання на живу сторінку лабораторної роботи №2</a></li>
+                    <li><a href="https://github.com/dariyannaa/independ2">Посилання на репозиторій самостійної роботи №2</a></li>
+                    <li><a href="https://dariyannaa.github.io/independ2/">Посилання на живу сторінку самостійної роботи №2</a></li>
+                    <li><a href="https://dariyannaa.github.io/zvit_Plieshkova/">Посилання на репозиторій звітного HTML документу</a></li>
+                </ul>`;
+        }
+
+        function showStyles() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p><strong>Вбудований стиль (Inline CSS)</strong></p>
+                <p>Стилі додаються безпосередньо в тег HTML за допомогою атрибута style.</p>
+                <img src="style1.jpg" alt="Placeholder Image" width="700">   
+                <p><strong>Внутрішній стиль (Internal CSS)</strong></p>   
+                <p>Стилі додаються у секцію style всередині елемента head HTML-документа.</p>      
+                <img src="style2.jpg" alt="Placeholder Image" width="300"> 
+                <p><strong>Зовнішній стиль (External CSS)</strong></p> 
+                <p>Стилі зберігаються в окремому файлі з розширенням .css, який підключається до HTML-документа за допомогою тега link.</p>  
+                <img src="style3.jpg" alt="Placeholder Image" width="700">`;
+        }
+
+        function showTagSelector() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <img src="body.png" alt="Placeholder Image" width="700">
+                <p>селектор тегу</p>`;
+        }
+
+        function showClassSelector() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <img src="main.png" alt="Placeholder Image" width="300">`;
+        }
+
+        function showIDSelector() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <img src="part1.jpg" alt="Placeholder Image" width="700">
+                <img src="part2.jpg" alt="Placeholder Image" width="700">
+                <p>Селектори ідентифікаторів.</p>`;
+        }
+
+        function showOtherSelector() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <img src="maintext.png" alt="Placeholder Image" width="700">
+                <p>Селектори нащадків.</p>
+                <img src="text1.jpg" alt="Placeholder Image" width="700">
+                <p>Селектор групування.</p>`;
+        }
+
+        function showCSS() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p>Шрифти.</p> 
+                <img src="font.png" alt="шрифти" width="700">
+                <p>Контури.</p> 
+                <img src="border.png" alt="Placeholder Image" width="700">
+                <p>Фон.</p> 
+                <img src="back.png" alt="Placeholder Image" width="700">
+                <p>Колір тексту.</p>
+                <img src="color.png" alt="Placeholder Image" width="700">
+                <p>CSS-властивості для таблиць.</p>
+                <img src="table.jpg" alt="Placeholder Image" width="700">`;
+        }
+
+        function showConclusion2() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p><strong>Висновок:</strong> Під час виконання ЛР №2 я придбала практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішніми та внутрішніми  відступами,  плаваючими елементами, оформленням текстових елементів.</p>`;
+        }
+    </script>
 </body>
 </html>
