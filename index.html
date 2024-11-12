@@ -86,7 +86,7 @@
         <div class="nav-buttons">
             <button>Лабораторна робота №1</button>
             <button onclick="showLab2()">Лабораторна робота №2</button>
-            <button>Лабораторна робота №3</button>
+            <button onclick="showLab3()">Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
             <button>Лабораторна робота №6</button>
@@ -195,5 +195,42 @@
                 <p><strong>Висновок:</strong> Під час виконання ЛР №2 я придбала практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішніми та внутрішніми  відступами,  плаваючими елементами, оформленням текстових елементів.</p>`;
         }
     </script>
+
+<script>
+    function showLab3() {
+         var menu = document.getElementById("menu");
+         menu.innerHTML = `
+             <button onclick="showDetails()">Тема, мета ЛР №3 Місце розташування сайту, звіту</button>
+             <button onclick="showStyles()">Додавання Flexbox для мобільної адаптації</button>
+             <button onclick="showConclusion2()">ВИСНОВКИ до ЛР №3</button>`;
+     }
+
+    function showDetails() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Тема:</strong> Верстка HTML-документу за макетом.  Типи макетів.  Блокова модель. Геометрія елемента . Рядково-блокові елементи</p>
+             <p><strong>Мета:</strong> придбати практичні навички роботи з @media</p>
+             <p><strong>Місце розташування:</strong></p>
+             <ul>
+                 <li><a href="https://github.com/dariyannaa/is-32_English_course_Plieshkova">Посилання на репозиторій лабораторної роботи №3</a></li>
+                 <li><a href="https://dariyannaa.github.io/is-32_English_course_Plieshkova/">Посилання на живу сторінку лабораторної роботи №3</a></li>
+                 <li><a href="https://dariyannaa.github.io/zvit_Plieshkova/">Посилання на репозиторій звітного HTML документу</a></li>
+             </ul>`;
+     }
+
+     function showStyles() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Додавання Flexbox</strong></p>
+             <img src="flaxbox.png" alt="Placeholder Image" width="700">`;
+     }
+
+
+     function showConclusion2() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Висновок:</strong> Під час виконання ЛР №3 я придбала практичні навички роботи  Flexbox для мобільної адаптації</p>`;
+     }
+ </script>
 </body>
 </html>
