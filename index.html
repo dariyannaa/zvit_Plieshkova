@@ -87,7 +87,7 @@
             <button>Лабораторна робота №1</button>
             <button onclick="showLab2()">Лабораторна робота №2</button>
             <button onclick="showLab3()">Лабораторна робота №3</button>
-            <button>Лабораторна робота №4</button>
+            <button onclick="showLab4()">Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
             <button>Лабораторна робота №6</button>
             <button>Лабораторна робота №7</button>
@@ -230,6 +230,51 @@
          var outputDiv = document.getElementById("output");
          outputDiv.innerHTML = `
              <p><strong>Висновок:</strong> Під час виконання ЛР №3 я придбала практичні навички роботи  Flexbox для мобільної адаптації</p>`;
+     }
+ </script>
+
+<script>
+    function showLab4() {
+         var menu = document.getElementById("menu");
+         menu.innerHTML = `
+             <button onclick="showDetails()">Тема, мета ЛР №4 Місце розташування сайту, звіту</button>
+             <button onclick="showStyles()">Додавання для планшетної адаптації</button>
+             <button onclick="showStyles1()">Додавання для мобільної адаптації</button>
+             <button onclick="showConclusion2()">ВИСНОВКИ до ЛР №4</button>`;
+     }
+
+    function showDetails() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Тема:</strong>АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT. СТРАТЕГІЯ MOBILE FIRST</p>
+             <p><strong>Мета:</strong> пАдаптивна верстка. Медіа-запити. Медіа-типи. Медіа-функції.Метатег viewport. Інструменти розробника. Стратегія Mobile First. </p>
+             <p><strong>Місце розташування:</strong></p>
+             <ul>
+                 <li><a href="https://github.com/dariyannaa/is-32_English_course_Plieshkova">Посилання на репозиторій лабораторної роботи №3</a></li>
+                 <li><a href="https://dariyannaa.github.io/is-32_English_course_Plieshkova/">Посилання на живу сторінку лабораторної роботи №3</a></li>
+                 <li><a href="https://dariyannaa.github.io/zvit_Plieshkova/">Посилання на репозиторій звітного HTML документу</a></li>
+             </ul>`;
+     }
+
+     function showStyles() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Для використання планшету</strong></p>
+             <img src="laptop.png" alt="Placeholder Image" width="700">`;
+     }
+
+     function showStyles1() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Для використання телефону</strong></p>
+             <img src="phhone.png" alt="Placeholder Image" width="700">`;
+     }
+
+
+     function showConclusion2() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Висновок:</strong> Під час виконання ЛР №4 я придбала практичні навички роботи з сайтом для планшету та телефону</p>`;
      }
  </script>
 </body>
