@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find and Sort Array</title>
+</head>
+<body>
+    <script>
+        // Завдання 1: Знайти найбільший серед від’ємних і найменший серед додатних
+        function findElements(arr) {
+            const negativeNumbers = arr.filter(num => num < 0);
+            const positiveNumbers = arr.filter(num => num > 0);
+        
+            const maxNegative = Math.max(...negativeNumbers);
+            const minPositive = Math.min(...positiveNumbers);
+        
+            return {
+                maxNegative,
+                minPositive
+            };
+        }
+        
+        // Приклад використання
+        const array1 = [3, -1, 7, -5, 0, -9, 8, 2];
+        const { maxNegative, minPositive } = findElements(array1);
+        
+        console.log("Вхідний масив:", array1);
+        console.log("Найбільший серед від'ємних:", maxNegative);
+        console.log("Найменший серед додатних:", minPositive);
+
+        // Завдання 2: Упорядкувати масив у порядку зменшення методом вибору
+        function selectionSortDescending(arr) {
+            const sortedArray = [...arr]; // Копія масиву
+            for (let i = 0; i < sortedArray.length - 1; i++) {
+                let maxIndex = i;
+                for (let j = i + 1; j < sortedArray.length; j++) {
+                    if (sortedArray[j] > sortedArray[maxIndex]) {
+                        maxIndex = j;
+                    }
+                }
+                if (maxIndex !== i) {
+                    [sortedArray[i], sortedArray[maxIndex]] = [sortedArray[maxIndex], sortedArray[i]];
+                }
+            }
+            return sortedArray;
+        }
+        
+        // Приклад використання
+        const array2 = [3, -1, 7, -5, 0, -9, 8, 2];
+        const sortedArray = selectionSortDescending(array2);
+        
+        console.log("Вхідний масив:", array2);
+        console.log("Вихідний масив (упорядкований):", sortedArray);
+    </script>
+</body>
+</html>

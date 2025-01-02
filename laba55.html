@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гістограма</title>
+    <style>
+        .bar {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .bar div {
+            height: 20px;
+            background-color: steelblue;
+            margin-left: 10px;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Побудова гістограми</h1>
+        <form id="numberForm">
+            <div id="fieldsContainer">
+                <input type="number" name="number" placeholder="Введіть число" required>
+            </div>
+            <button type="button" id="addField">Додати поле</button>
+            <button type="button" id="buildHistogram">Побудувати гістограму</button>
+        </form>
+        <h2>Гістограма:</h2>
+        <div id="histogram"></div>
+    </div>
+
+    <script>
+        // Додавання нових полів
+        const addFieldButton = document.getElementById('addField');
+        const fieldsContainer = document.getElementById('fieldsContainer');
+
+        addFieldButton.addEventListener('click', () => {
+            const inputField = document.createElement('input');
+            inputField.type = 'number';
+            inputField.name = 'number';
+            inputField.placeholder = 'Введіть число';
+            fieldsContainer.appendChild(inputField);
+        });
+
+        // Побудова гістограми
+        const buildHistogramButton = document.getElementById('buildHistogram');
+        const histogramContainer = document.getElementById('histogram');
+
+        buildHistogramButton.addEventListener('click', () => {
+            const inputs = document.querySelectorAll('input[name="number"]');
+            const values = Array.from(inputs).map(input => parseFloat(input.value)).filter(num => !isNaN(num));
+
+            if (values.length === 0) {
+                alert('Введіть хоча б одне число!');
+                return;
+            }
+
+            // Знаходимо максимальне значення для нормалізації
+            const maxValue = Math.max(...values);
+
+            // Очищаємо попередню гістограму
+            histogramContainer.innerHTML = '';
+
+            // Побудова гістограми
+            values.forEach(value => {
+                const barContainer = document.createElement('div');
+                barContainer.className = 'bar';
+                barContainer.textContent = value;
+
+                const bar = document.createElement('div');
+                bar.style.width = `${(value / maxValue) * 100}%`;
+                bar.textContent = value;
+
+                barContainer.appendChild(bar);
+                histogramContainer.appendChild(barContainer);
+            });
+        });
+    </script>
+</body>
+</html>
