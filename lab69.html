@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Count Example</title>
+</head>
+<body>
+    <h1>Open the console to see the tag count</h1>
+    <script>
+        const tweets = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+        ];
+
+        // Обчислення кількості тегів
+        const tagCount = tweets
+            .flatMap(tweet => tweet.tags) // Розгортаємо всі теги в один масив
+            .reduce((acc, tag) => {
+                acc[tag] = (acc[tag] || 0) + 1; // Підраховуємо кількість кожного тегу
+                return acc;
+            }, {});
+
+        console.log(tagCount);
+    </script>
+</body>
+</html>

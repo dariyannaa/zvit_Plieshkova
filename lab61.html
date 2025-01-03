@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Example</title>
+    <script>
+        function createProduct(obj, callback) {
+            // Генеруємо унікальний ідентифікатор
+            const product = { ...obj, id: Date.now() };
+            // Викликаємо переданий колбек з новоствореним об'єктом продукту
+            callback(product);
+        }
+
+        function logProduct(product) {
+            console.log("Product:", product);
+        }
+
+        function logTotalPrice(product) {
+            if (product.price && product.quantity) {
+                const totalPrice = product.price * product.quantity;
+                console.log(`Total Price: $${totalPrice.toFixed(2)}`);
+            } else {
+                console.log("Product is missing price or quantity.");
+            }
+        }
+
+        // Виконання коду після завантаження сторінки
+        document.addEventListener("DOMContentLoaded", () => {
+            const newProduct = { name: "Face Cream", price: 20, quantity: 3 };
+
+            // Використовуємо createProduct з logProduct як колбеком
+            createProduct(newProduct, logProduct);
+
+            // Використовуємо createProduct з logTotalPrice як колбеком
+            createProduct(newProduct, logTotalPrice);
+        });
+    </script>
+</head>
+<body>
+    <h1>Open the console to see the results</h1>
+</body>
+</html>

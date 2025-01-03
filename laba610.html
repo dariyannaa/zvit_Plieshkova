@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check Brackets Function</h1>
+    
+    <script>
+        function checkBrackets(str) {
+            const stack = [];
+            const openBrackets = "({[";
+            const closeBrackets = ")}]";
+        
+            for (let char of str) {
+                if (openBrackets.includes(char)) {
+                    stack.push(char); // Додаємо відкриваючу дужку в стек
+                } else if (closeBrackets.includes(char)) {
+                    const top = stack.pop(); // Витягуємо останню відкриваючу дужку
+                    const matchingBracket = openBrackets.indexOf(top) === closeBrackets.indexOf(char);
+        
+                    if (!matchingBracket) {
+                        return false; // Невідповідність дужок
+                    }
+                }
+            }
+        
+            return stack.length === 0; // Якщо стек порожній, то всі дужки правильно закриті
+        }
+        
+        // Приклад використання:
+        console.log(checkBrackets("function someFn() { return [1, 2, 3]; }")); // true
+        console.log(checkBrackets("function someFn( { return [1, 2, 3]; }")); // false
+    </script>
+</body>
+</html>

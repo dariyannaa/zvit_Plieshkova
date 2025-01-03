@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Open the console to see the results</h1>
+    <script>
+        const medicines = {
+            Агалгін: new Date("2022-05-01"),
+            Ношпа: new Date("2025-07-02"),
+            Альфахолін: new Date("2024-12-21"),
+            Аспірин: new Date("2022-08-15"),
+            Аспаркам: new Date("2024-04-18"),
+        };
+
+        // Поточна дата
+        const today = new Date();
+
+        // Отримуємо масив назв медикаментів, які ще не прострочені
+        const validMedicines = Object.entries(medicines)
+            .filter(([name, expiryDate]) => expiryDate > today) // Фільтруємо за датою
+            .sort(([, dateA], [, dateB]) => dateA - dateB) // Сортуємо за датою
+            .map(([name]) => name); // Отримуємо лише назви
+
+        // Виводимо результат
+        console.log(validMedicines);
+    </script>
+</body>
+</html>

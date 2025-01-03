@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounted Fruits</title>
+</head>
+<body>
+    <h1>Open the console to see the discounted fruits</h1>
+    <script>
+        const applyDiscountAndAddId = (products) => {
+            return products.map((product, index) => ({
+                ...product, // Зберігаємо всі існуючі властивості продукту
+                id: index + 1, // Генеруємо унікальний ID, починаючи з 1
+                price: product.price * 0.8, // Застосовуємо знижку 20%
+            }));
+        };
+
+        const fruits = [
+            { name: "apple", price: 200 },
+            { name: "orange", price: 300 },
+            { name: "grapes", price: 750 },
+        ];
+
+        const discountedFruits = applyDiscountAndAddId(fruits);
+
+        console.log(discountedFruits);
+    </script>
+</body>
+</html>

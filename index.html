@@ -89,7 +89,7 @@
             <button onclick="showLab3()">Лабораторна робота №3</button>
             <button onclick="showLab4()">Лабораторна робота №4</button>
             <button onclick="showLab5()">Лабораторна робота №5</button>
-            <button>Лабораторна робота №6</button>
+            <button onclick="showLab6()">Лабораторна робота №6</button>
             <button>Лабораторна робота №7</button>
             <button>Лабораторна робота №8</button>
             <button>Лабораторна робота №9</button>
@@ -341,7 +341,81 @@
      function showConclusion2() {
          var outputDiv = document.getElementById("output");
          outputDiv.innerHTML = `
-             <p><strong>Висновок:</strong> Під час виконання ЛР №4 я придбала практичні навички роботи з конструкціями мови JS</p>`;
+             <p><strong>Висновок:</strong> Під час виконання ЛР №5 я придбала практичні навички роботи з конструкціями мови JS</p>`;
+     }
+ </script>
+
+<script>
+    function showLab6() {
+         var menu = document.getElementById("menu");
+         menu.innerHTML = `
+             <button onclick="showDetails()">Тема, мета ЛР №6 Місце розташування сайту, звіту</button>
+             <button onclick="showStyles()">Завдання 1</button>
+             <button onclick="showStyles1()">Завдання 2</button>
+               <button onclick="showStyles2()">Завдання 3</button>
+                 <button onclick="showStyles3()">Завдання 4</button>
+                   <button onclick="showStyles4()">Завдання 5</button>
+                       <button onclick="showStyles5()">Завдання 6</button>
+             <button onclick="showConclusion2()">ВИСНОВКИ до ЛР №6</button>`;
+     }
+
+    function showDetails() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+         <p><strong>Тема:</strong>ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</p>
+             <p><strong>Мета:</strong> придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+.Реалізація програм засовами мови JAVASCRIPT</p>
+             <p><strong>Місце розташування:</strong></p>
+             <ul>
+                 <li><a href="https://dariyannaa.github.io/is-32_English_course_Plieshkova/">Посилання на живу сторінку лабораторної роботи №</a></li>
+                 <li><a href="https://dariyannaa.github.io/zvit_Plieshkova/">Посилання на репозиторій звітного HTML документу</a></li>
+             </ul>`;
+     }
+
+     function showStyles() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 1</strong></p>
+             <img src="laba61.png" alt="Placeholder Image" width="700">`;
+     }
+
+     function showStyles1() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 2</strong></p>
+             <img src="lab63.png" alt="Placeholder Image" width="700">`;
+     }
+
+     function showStyles2() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 3</strong></p>
+             <img src="laba65.png" alt="Placeholder Image" width="700">`;
+     }
+
+     function showStyles3() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 4</strong></p>
+             <img src="lab67.png" alt="Placeholder Image" width="700">`;
+     }
+     function showStyles4() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 5</strong></p>
+             <img src="laba69.png" alt="Placeholder Image" width="700">`;
+     }
+
+     function showStyles5() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Завдання 6</strong></p>
+             <img src="laba610.png" alt="Placeholder Image" width="700">`;
+     }
+     function showConclusion2() {
+         var outputDiv = document.getElementById("output");
+         outputDiv.innerHTML = `
+             <p><strong>Висновок:</strong> Під час виконання ЛР №5 я придбала практичні навички роботи об'єктами</p>`;
      }
  </script>
 </body>

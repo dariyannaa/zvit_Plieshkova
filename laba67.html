@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Class Example</title>
+</head>
+<body>
+    <h1>Open the console to see the output</h1>
+    <script>
+        class Client {
+            // Оголошення приватних властивостей
+            #login;
+            #email;
+        
+            // Конструктор для ініціалізації властивостей
+            constructor(login, email) {
+                this.#login = login;
+                this.#email = email;
+            }
+        
+            // Геттер для властивості login
+            get login() {
+                return this.#login;
+            }
+        
+            // Сеттер для властивості login
+            set login(newLogin) {
+                if (typeof newLogin === 'string' && newLogin.trim().length > 0) {
+                    this.#login = newLogin;
+                } else {
+                    console.error("Invalid login value");
+                }
+            }
+        
+            // Геттер для властивості email
+            get email() {
+                return this.#email;
+            }
+        
+            // Сеттер для властивості email
+            set email(newEmail) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Проста перевірка на формат email
+                if (emailRegex.test(newEmail)) {
+                    this.#email = newEmail;
+                } else {
+                    console.error("Invalid email value");
+                }
+            }
+        }
+        
+        // Приклад використання
+        const client = new Client("user123", "user@example.com");
+        
+        console.log(client.login); // "user123"
+        console.log(client.email); // "user@example.com"
+        
+        client.login = "newUser"; // Оновлення login
+        client.email = "new@example.com"; // Оновлення email
+        
+        console.log(client.login); // "newUser"
+        console.log(client.email); // "new@example.com"
+        
+        client.email = "invalid-email"; // Виведе помилку в консоль
+    </script>
+</body>
+</html>
